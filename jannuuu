@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sweety ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(120deg,#ff9a9e,#fad0c4);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+h1,h2{animation:fadeIn 2s;}
+p{max-width:600px;font-size:18px;line-height:1.6;}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    background:#ff3366;
+    color:white;
+    font-size:18px;
+    margin:10px;
+    cursor:pointer;
+}
+button:hover{background:#ff0055;}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(30px);}
+    to{opacity:1;transform:translateY(0);}
+}
+.firework{
+    position:fixed;
+    width:10px;
+    height:10px;
+    background:yellow;
+    border-radius:50%;
+    animation:explode 1s infinite;
+}
+@keyframes explode{
+    0%{transform:scale(1);opacity:1;}
+    100%{transform:scale(5);opacity:0;}
+}
+.hidden{display:none;}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<section id="page1">
+<h1>Hey Jannu ❤️</h1>
+<p>
+I made something special just for you, my sweetheart 💕  
+Before the cake, before the wishes…  
+I want you to feel how much you mean to me.
+</p>
+<button onclick="next(2)">Click Here Baby 💝</button>
+</section>
+
+<section id="page2" class="hidden">
+<h1>🎉 Happy Birthday My Sweety 🎉</h1>
+<p>
+You are my smile, my peace, my happiness, my baby ❤️  
+Every moment with you feels magical ✨  
+May your life always be full of love and laughter.
+</p>
+<button onclick="next(3)">Next Surprise 🎁</button>
+</section>
+
+<section id="page3" class="hidden">
+<h2>💞 Our Beautiful Story 💞</h2>
+<p>
+Every memory with you has my heart in it ❤️  
+From silly laughs to deep talks,  
+I choose you every single day, Jannu 💑
+</p>
+<button onclick="next(4)">Read My Letter 💌</button>
+</section>
+
+<section id="page4" class="hidden">
+<h2>💖 A Letter From Your Baby 💖</h2>
+<p>
+My sweetheart,  
+You make my bad days better and my good days perfect 💕  
+I promise to stand with you always,  
+to hold your hand and never let you feel alone.
+</p>
+<button onclick="next(5)">One Last Question 💍</button>
+</section>
+
+<section id="page5" class="hidden">
+<h2>✨ Will You Be Mine Forever? ✨</h2>
+<p>My Sweety, my Jannu, my baby ❤️</p>
+<button onclick="yes()">YES 😍</button>
+<button onclick="no()">NO 🙈</button>
+</section>
+
+<section id="page6" class="hidden">
+<h1>🎆 I Love You Forever 🎆</h1>
+<p>
+You just made me the happiest person alive ❤️  
+Happy Birthday once again my sweetheart 🎂  
+This website ends here, but my love never will 💞
+</p>
+</section>
+
+<script>
+function next(n){
+    document.querySelectorAll("section").forEach(s=>s.classList.add("hidden"));
+    document.getElementById("page"+n).classList.remove("hidden");
+}
+
+function yes(){
+    next(6);
+    for(let i=0;i<30;i++){
+        let f=document.createElement("div");
+        f.className="firework";
+        f.style.left=Math.random()*100+"%";
+        f.style.top=Math.random()*100+"%";
+        document.body.appendChild(f);
+    }
+}
+
+function no(){
+    alert("Sorry baby 😂 You have no option! Try YES ❤️");
+}
+</script>
+
+</body>
+</html>
